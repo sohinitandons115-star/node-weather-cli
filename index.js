@@ -40,3 +40,5 @@ https.get(url, (res) => {
   console.log("Network error occurred.");
   console.log("Done");
 });
+
+console.log("Weather CLI initialized");
