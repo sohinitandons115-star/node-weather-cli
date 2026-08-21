@@ -1,13 +1,23 @@
 {
-  "name": "weather",
-  "version": "1.0.0",
-  "description": "",
+  "name": "weather-brief-ai",
+  "version": "2.0.0",
+  "description": "Full-stack weather brief generator using structured LLM output",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node index.js",
+    "start": "node index.js",
+    "client": "npm --prefix client run dev",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "openai": "^4.77.0"
+  }
 }
