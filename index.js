@@ -36,4 +36,8 @@ app.delete("/api/weather-briefs/:id", async (req, res, next) => {
 });
 app.use((req, res) => res.status(404).json({ error: `Route ${req.method} ${req.path} was not found` }));
 app.use((error, _req, res, _next) => { console.error(error); const status = error.statusCode || (error.name === "ValidationError" ? 400 : 500); res.status(status).json({ error: status === 500 ? "Internal server error" : error.message }); });
-connectMongo().then(() => app.listen(port, () => console.log(`Weather Brief API listening on :${port}`))).catch((error) => { console.error("Unable to start server", error); process.exit(1); });
+if (require.main === module) {
+  connectMongo().then(() => app.listen(port, () => console.log(`Weather Brief API listening on :${port}`))).catch((error) => { console.error("Unable to start server", error); process.exit(1); });
+}
+
+module.exports = { app };

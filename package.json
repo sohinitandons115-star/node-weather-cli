@@ -7,6 +7,7 @@
     "dev": "node index.js",
     "start": "node index.js",
     "client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
     "test": "node --test"
   },
   "keywords": [],
